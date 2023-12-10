@@ -23,7 +23,9 @@ void simulate_bar(std::istream& input, std::ostream& output)
 		input >> groupCapacity;
 		input >> numberOfStudents;
 
-		if (clubCapacity == 0 && numberOfStudents != 0)
+		if (clubCapacity == 0 && groupCapacity == 0 && numberOfStudents == 0)
+			return;
+		if (clubCapacity == 0)
 			throw std::runtime_error("No space in bar");
 
 		students = new Student[numberOfStudents];
